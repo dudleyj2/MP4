@@ -6,8 +6,9 @@ league_path = sys.argv[1]
 league_dict = {}
 
 with open(league_path) as f:
-    lines = f.readlines()
-    leagues = [line.strip() for line in lines]
+    leagues = []
+    for line in f:
+        leagues.append(line.split()[0])
     for league in leagues:
         league_dict[league] = 0
     
