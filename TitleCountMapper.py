@@ -19,4 +19,4 @@ for line in sys.stdin:
     words = [word for word in line.split() if word not in STOP_WORDS]
     words_no_stop = [word for word in words if word not in STOP_WORDS]
     for word in words_no_stop:
-        print('%s\t%s' % (word, 1))
+        print(f'{word}\t1')

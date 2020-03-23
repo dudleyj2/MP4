@@ -11,4 +11,4 @@ for line in sys.stdin:
     word_dict[word] = word_dict.get(word, 0) + 1
 
 for word in word_dict:
-    print('%s\t%s' % (word, word_dict.get(word)))
+    print(f'{word}\t{word_dict.get(word))}')
