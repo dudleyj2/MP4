@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
+
 import sys
-#TODO
 
-# input comes from STDIN
+league_dict = {}
+
 for line in sys.stdin:
-    # TODO
+    league_id, count = line.strip().split('\t')
+    count = int(count)
+    league_dict[league_id] = count
 
+sorted_league_dict = sorted(league_dict.items(), key=lambda x: x[0], reverse=True)
 
-#TODO
-# print('%s\t%s' % (  ,  )) print as final output
+for league_id, count in sorted_league_dict:
+    print(f'{league_id}\t{count}')

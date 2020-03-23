@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
+
 import sys
 
+league_path = sys.argv[1]
+league_dict = {}
 
-leaguePath = sys.argv[1]
-#TODO
-
-
-with open(leaguePath) as f:
-	#TODO
-
-
-
-
-
+with open(league_path) as f:
+    lines = f.readlines()
+    leagues = [line.strip() for line in lines]
+    for league in leagues:
+        league_dict[league] = 0
+    
 for line in sys.stdin:
+    parent_id, count = line.strip().split('\t')
+    if parent_id in leagues:
+        count = int(count)
+        league_dict[parent_id] = count
 
-       #TODO
-
-       # print('%s\t%s' % (  ,  )) pass this output to reducer
+for league, count in league_dict.items():
+    print(f'{league}\t{count}')
